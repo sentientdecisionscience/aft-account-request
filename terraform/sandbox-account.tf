@@ -1,4 +1,4 @@
-module "sandbox_account" { # Module call names must be unique
+module "sandbox_account" { # Module call names must be unique.
   source = "./modules/aft-account-request"
 
   # All control_tower_parameters' fields below are REQUIRED.
