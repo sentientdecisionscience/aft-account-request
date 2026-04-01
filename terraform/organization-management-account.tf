@@ -1,13 +1,13 @@
 module "organization_management_account" {
   source = "./modules/aft-account-request"
 
-  # All control_tower_parameters' fields below are REQUIRED
+  # All control_tower_parameters' fields below are REQUIRED.
   # Triple check these values before committing the file & ensure spelling is correct.
   control_tower_parameters = {
     AccountEmail              = "areid@sentientdecisionscience.com"
     AccountName               = "Sentient Management"
     ManagedOrganizationalUnit = "Root"
-    SSOUserEmail              = "areid@sentientdecisionscience.com"
+    SSOUserEmail              = ""
     SSOUserFirstName          = "Sentient"
     SSOUserLastName           = "Management"
   }
