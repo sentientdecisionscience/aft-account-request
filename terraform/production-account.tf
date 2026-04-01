@@ -6,7 +6,7 @@ module "production_account" { # Module call names must be unique
   control_tower_parameters = {
     AccountEmail              = "aws.production@sentientdecisionscience.com" # example: aws.account+template@company.com
     AccountName               = "Production"                                 # example: "Template"
-    ManagedOrganizationalUnit = "Production (ou-v919-xyg1342j)"              # example: "Template"
+    ManagedOrganizationalUnit = "Workloads:Labs (ou-v919-ef140nsq)"          # example: "Template"
     SSOUserEmail              = "aws.production@sentientdecisionscience.com" # example: aws.account+template@company.com
     SSOUserFirstName          = "Production"                                 # example: Template
     SSOUserLastName           = "Admin"                                      # example: Admin"
