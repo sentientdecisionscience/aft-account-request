@@ -28,8 +28,8 @@ module "organization_management_account" {
   # and are used to apply customizations automatically to the account
   # during the global, account, and account-provisioning customizations stages of the AFT pipeline.
   custom_fields = {
-    "enable_iam_user_password_policy" = "true"
-    "delete_default_vpcs"             = "true" # Used by the aft-account-provisioning-customizations step function
+    #"enable_iam_user_password_policy" = "true"
+    #"delete_default_vpcs"             = "true" # Used by the aft-account-provisioning-customizations step function
   }
 
   # The AFT framework uses the following value to map the created account to
