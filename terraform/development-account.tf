@@ -1,15 +1,15 @@
-module "organization_management_account" {
+module "development_account" { # Module call names must be unique
   source = "./modules/aft-account-request"
 
   # All control_tower_parameters' fields below are REQUIRED.
   # Triple check these values before committing the file & ensure spelling is correct.
   control_tower_parameters = {
-    AccountEmail              = "areid@sentientdecisionscience.com"
-    AccountName               = "Sentient Management"
-    ManagedOrganizationalUnit = "Root"
-    SSOUserEmail              = "areid@sentientdecisionscience.com"
-    SSOUserFirstName          = "Sentient"
-    SSOUserLastName           = "Management"
+    AccountEmail              = "aws.development@sentientdecisionscience.com" # example: aws.account+template@company.com
+    AccountName               = "Development"                                 # example: "Template"
+    ManagedOrganizationalUnit = "Workloads:Labs (ou-v919-ji3srxf4)"           # example: "Template"
+    SSOUserEmail              = "aws.development@sentientdecisionscience.com" # example: aws.account+template@company.com
+    SSOUserFirstName          = "Development"                                 # example: Template
+    SSOUserLastName           = "Admin"                                       # example: Admin"
   }
 
   account_tags = {
@@ -21,18 +21,20 @@ module "organization_management_account" {
     change_requested_by = "edwin.moedano@caylent.com"
 
     # Update reason any time this file is edited
-    change_reason = "Import Organization Management Account into AFT"
+    change_reason = "Provisioning new Development account"
   }
 
   # Custom fields are created as SSM Parameters within the AWS account
   # and are used to apply customizations automatically to the account
   # during the global, account, and account-provisioning customizations stages of the AFT pipeline.
   custom_fields = {
+    "enable_s3_block_public_access"   = "true"
+    "enable_ebs_encryption"           = "true"
     "enable_iam_user_password_policy" = "true"
     "delete_default_vpcs"             = "true" # Used by the aft-account-provisioning-customizations step function
   }
 
   # The AFT framework uses the following value to map the created account to
   # its customizations folder in the aft-account-customizations repository.
-  account_customizations_name = "accounts/organization-management-account"
+  account_customizations_name = "accounts/development-account" # example: accounts/template-account
 }
