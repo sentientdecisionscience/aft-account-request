@@ -6,7 +6,7 @@ module "datalake_account" { # Module call names must be unique
   control_tower_parameters = {
     AccountEmail              = "aws.datalake@sentientdecisionscience.com" # example: aws.account+template@company.com
     AccountName               = "Data Lake"                                # example: "Template"
-    ManagedOrganizationalUnit = "Workloads:Production (ou-v919-ef140nsq)"  # example: "Template"
+    ManagedOrganizationalUnit = "Workloads:Labs (ou-v919-ji3srxf4)"        # example: "Template"
     SSOUserEmail              = "aws.datalake@sentientdecisionscience.com" # example: aws.account+template@company.com
     SSOUserFirstName          = "Datalake"                                 # example: Template
     SSOUserLastName           = "Admin"                                    # example: Admin"
@@ -21,7 +21,7 @@ module "datalake_account" { # Module call names must be unique
     change_requested_by = "edwin.moedano@caylent.com"
 
     # Update reason any time this file is edited
-    change_reason = "Provisioning new Data Lake account"
+    change_reason = "Change OU Data Lake account"
   }
 
   # Custom fields are created as SSM Parameters within the AWS account
